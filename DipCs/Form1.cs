@@ -43,6 +43,11 @@ namespace DipCs
             resultImage.Save(saveFileDialog1.FileName);
         }
 
+        private void saveFileDialog2_FileOk(object sender, CancelEventArgs e)
+        {
+            resultImage2.Save(saveFileDialog2.FileName);
+        }
+
         private void loadImageToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Load Image
@@ -64,6 +69,13 @@ namespace DipCs
             // Save Image
             saveFileDialog1.ShowDialog();
         }
+
+        private void saveImageToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            saveFileDialog2.ShowDialog();
+        }
+
+
 
         private void basicCopyToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -123,32 +135,7 @@ namespace DipCs
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            IDataObject data;
-            Image bmap;
-            mgadevice[0].Sendmessage();
-            data = Clipboard.GetDataObject();
-            bmap = (Image)(data.GetData("System.Drawing.Bitmap", true));
-            Bitmap b = new Bitmap(bmap); // loaded
-            //BitmapFilter.GrayScale(b);
-            BitmapFilter.TimeWarp(b, 20, true);
-            // Subtract(ref Bitmap a, ref Bitmap b,ref Bitmap result, int value)
-
-            pictureBox2.Image = b;
-            /*
-            Color pixel;
-            int greyvalue;
-            processed = new Bitmap(b.Width, b.Height);
-            for (int x = 0; x < loadedImage.Width; x++)
-            {
-                for (int y = 0; y < loadedImage.Height; y++)
-                {
-                    pixel = loadedImage.GetPixel(x, y);
-                    greyvalue = (byte)((pixel.R + pixel.G + pixel.B) / 3);
-                    processed.SetPixel(x, y, Color.FromArgb(greyvalue, greyvalue, greyvalue));
-                }
-            }
-            pictureBox2.Image = processed;
-            */
+            
         }
 
         private void offToolStripMenuItem_Click(object sender, EventArgs e)
@@ -156,16 +143,133 @@ namespace DipCs
             mgadevice[0].Stop();
         }
 
-        private void subtToolStripMenuItem_Click(object sender, EventArgs e)
+        private void basicCopyToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            ImageProcess.Subtract(ref imageB, ref imageA, ref resultImage2, 20);
-            pictureBox3.Image = resultImage2;
+            IDataObject data;
+            Image bmap;
+            mgadevice[0].Sendmessage();
+            data = Clipboard.GetDataObject();
+            bmap = (Image)(data.GetData("System.Drawing.Bitmap", true));
+            Bitmap b = new Bitmap(bmap); // loaded
+            
+            Color pixel;
+            imageA = new Bitmap(b.Width, b.Height);
+            for (int x = 0; x < b.Width; x++)
+            {
+                for (int y = 0; y < b.Height; y++)
+                {
+                    pixel = b.GetPixel(x, y);
+                    imageA.SetPixel(x, y, pixel);
+                }
+            }
+            pictureBox2.Image = imageA;
         }
 
-        private void timeWarpToolStripMenuItem_Click(object sender, EventArgs e)
+        private void greyScaleToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            timer1.Enabled = true;
+            IDataObject data;
+            Image bmap;
+            mgadevice[0].Sendmessage();
+            data = Clipboard.GetDataObject();
+            bmap = (Image)(data.GetData("System.Drawing.Bitmap", true));
+            Bitmap b = new Bitmap(bmap); // loaded
+            Color pixel;
+            int greyvalue;
+            imageA = new Bitmap(b.Width, b.Height);
+            for (int x = 0; x < b.Width; x++)
+            {
+                for (int y = 0; y < b.Height; y++)
+                {
+                    pixel = b.GetPixel(x, y);
+                    greyvalue = (byte)((pixel.R + pixel.G + pixel.B) / 3);
+                    imageA.SetPixel(x, y, Color.FromArgb(greyvalue, greyvalue, greyvalue));
+                }
+            }
+            pictureBox2.Image = imageA;
         }
+
+        private void invertToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            IDataObject data;
+            Image bmap;
+            mgadevice[0].Sendmessage();
+            data = Clipboard.GetDataObject();
+            bmap = (Image)(data.GetData("System.Drawing.Bitmap", true));
+            Bitmap b = new Bitmap(bmap); // loaded
+            
+            Color pixel;
+            imageA = new Bitmap(b.Width, b.Height);
+            for (int x = 0; x < b.Width; x++)
+            {
+                for (int y = 0; y < b.Height; y++)
+                {
+                    pixel = b.GetPixel(x, y);
+                    imageA.SetPixel(x, y, Color.FromArgb(255 - pixel.R, 255 - pixel.G, 255 - pixel.B));
+                }
+            }
+            pictureBox2.Image = imageA;
+        }
+
+        private void sepiaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            IDataObject data;
+            Image bmap;
+            mgadevice[0].Sendmessage();
+            data = Clipboard.GetDataObject();
+            bmap = (Image)(data.GetData("System.Drawing.Bitmap", true));
+            Bitmap b = new Bitmap(bmap); // loaded
+
+            Color pixel;
+            imageA = new Bitmap(b.Width, b.Height);
+            for (int x = 0; x < b.Width; x++)
+            {
+                for (int y = 0; y < b.Height; y++)
+                {
+                    pixel = b.GetPixel(x, y);
+                    int sepiaR = (int)Math.Min(255, (0.393 * pixel.R) + (0.769 * pixel.G) + (0.189 * pixel.B));
+                    int sepiaG = (int)Math.Min(255, (0.349 * pixel.R) + (0.686 * pixel.G) + (0.168 * pixel.B));
+                    int sepiaB = (int)Math.Min(255, (0.272 * pixel.R) + (0.534 * pixel.G) + (0.131 * pixel.B));
+                    imageA.SetPixel(x, y, Color.FromArgb(sepiaR, sepiaG, sepiaB));
+                }
+            }
+            pictureBox2.Image = imageA;
+        }
+
+        private void subtractToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            IDataObject data;
+            Image bmap;
+            mgadevice[0].Sendmessage();
+            data = Clipboard.GetDataObject();
+            bmap = (Image)(data.GetData("System.Drawing.Bitmap", true));
+            Bitmap b = new Bitmap(bmap); // loaded
+
+            Color pixel;
+            Color mygreen = Color.FromArgb(0, 0, 255);
+            int greygreen = (mygreen.R + mygreen.G + mygreen.B) / 3;
+            int threshold = 5;
+            processed = new Bitmap(b.Width, b.Height);
+
+            for (int x = 0; x < b.Width; x++)
+            {
+                for (int y = 0; y < b.Height; y++)
+                {
+                    pixel = b.GetPixel(x, y);
+                    Color backpixel = imageA.GetPixel(x, y);
+                    int grey = (pixel.R + pixel.G + pixel.B) / 3;
+                    int subtractvalue = Math.Abs(grey - greygreen);
+                    if (subtractvalue > threshold)
+                        processed.SetPixel(x, y, pixel);
+                    else
+                        processed.SetPixel(x, y, backpixel);
+                }
+            }
+            pictureBox3.Image = processed;
+        }
+
+        
+
+
 
         private void histogramToolStripMenuItem_Click(object sender, EventArgs e)
         {

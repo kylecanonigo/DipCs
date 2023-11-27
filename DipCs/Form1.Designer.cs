@@ -46,17 +46,21 @@
             this.loadImageToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.loadBackgroundToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.subtractToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.basicDIPLibToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.subtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cameraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.onToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.offToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dynamicDIPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.basicCopyToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.greyScaleToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.invertToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.sepiaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.subtractToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialog3 = new System.Windows.Forms.OpenFileDialog();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.cITLibFiltersToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.timeWarpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveImageToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveFileDialog2 = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -99,10 +103,11 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dIPBASICToolStripMenuItem,
             this.dIPPart2ToolStripMenuItem,
-            this.cameraToolStripMenuItem});
+            this.cameraToolStripMenuItem,
+            this.dynamicDIPToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(2104, 42);
+            this.menuStrip1.Size = new System.Drawing.Size(2104, 40);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -117,7 +122,7 @@
             this.histogramToolStripMenuItem,
             this.sepiaToolStripMenuItem});
             this.dIPBASICToolStripMenuItem.Name = "dIPBASICToolStripMenuItem";
-            this.dIPBASICToolStripMenuItem.Size = new System.Drawing.Size(149, 38);
+            this.dIPBASICToolStripMenuItem.Size = new System.Drawing.Size(149, 36);
             this.dIPBASICToolStripMenuItem.Text = "DIP PART 1";
             // 
             // loadImageToolStripMenuItem
@@ -174,10 +179,10 @@
             this.dIPPart2ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.loadImageToolStripMenuItem1,
             this.loadBackgroundToolStripMenuItem,
-            this.subtractToolStripMenuItem,
-            this.basicDIPLibToolStripMenuItem});
+            this.saveImageToolStripMenuItem1,
+            this.subtractToolStripMenuItem});
             this.dIPPart2ToolStripMenuItem.Name = "dIPPart2ToolStripMenuItem";
-            this.dIPPart2ToolStripMenuItem.Size = new System.Drawing.Size(149, 36);
+            this.dIPPart2ToolStripMenuItem.Size = new System.Drawing.Size(149, 38);
             this.dIPPart2ToolStripMenuItem.Text = "DIP PART 2";
             // 
             // loadImageToolStripMenuItem1
@@ -201,27 +206,11 @@
             this.subtractToolStripMenuItem.Text = "Subtract";
             this.subtractToolStripMenuItem.Click += new System.EventHandler(this.subtractToolStripMenuItem_Click);
             // 
-            // basicDIPLibToolStripMenuItem
-            // 
-            this.basicDIPLibToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.subtToolStripMenuItem});
-            this.basicDIPLibToolStripMenuItem.Name = "basicDIPLibToolStripMenuItem";
-            this.basicDIPLibToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
-            this.basicDIPLibToolStripMenuItem.Text = "Basic DIP Lib";
-            // 
-            // subtToolStripMenuItem
-            // 
-            this.subtToolStripMenuItem.Name = "subtToolStripMenuItem";
-            this.subtToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
-            this.subtToolStripMenuItem.Text = "Subtract";
-            this.subtToolStripMenuItem.Click += new System.EventHandler(this.subtToolStripMenuItem_Click);
-            // 
             // cameraToolStripMenuItem
             // 
             this.cameraToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.onToolStripMenuItem,
-            this.offToolStripMenuItem,
-            this.cITLibFiltersToolStripMenuItem1});
+            this.offToolStripMenuItem});
             this.cameraToolStripMenuItem.Name = "cameraToolStripMenuItem";
             this.cameraToolStripMenuItem.Size = new System.Drawing.Size(115, 38);
             this.cameraToolStripMenuItem.Text = "Camera";
@@ -229,16 +218,63 @@
             // onToolStripMenuItem
             // 
             this.onToolStripMenuItem.Name = "onToolStripMenuItem";
-            this.onToolStripMenuItem.Size = new System.Drawing.Size(181, 44);
+            this.onToolStripMenuItem.Size = new System.Drawing.Size(289, 44);
             this.onToolStripMenuItem.Text = "On";
             this.onToolStripMenuItem.Click += new System.EventHandler(this.onToolStripMenuItem_Click);
             // 
             // offToolStripMenuItem
             // 
             this.offToolStripMenuItem.Name = "offToolStripMenuItem";
-            this.offToolStripMenuItem.Size = new System.Drawing.Size(181, 44);
+            this.offToolStripMenuItem.Size = new System.Drawing.Size(289, 44);
             this.offToolStripMenuItem.Text = "Off";
             this.offToolStripMenuItem.Click += new System.EventHandler(this.offToolStripMenuItem_Click);
+            // 
+            // dynamicDIPToolStripMenuItem
+            // 
+            this.dynamicDIPToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.basicCopyToolStripMenuItem1,
+            this.greyScaleToolStripMenuItem1,
+            this.invertToolStripMenuItem1,
+            this.sepiaToolStripMenuItem1,
+            this.subtractToolStripMenuItem1});
+            this.dynamicDIPToolStripMenuItem.Name = "dynamicDIPToolStripMenuItem";
+            this.dynamicDIPToolStripMenuItem.Size = new System.Drawing.Size(170, 36);
+            this.dynamicDIPToolStripMenuItem.Text = "Dynamic DIP";
+            // 
+            // basicCopyToolStripMenuItem1
+            // 
+            this.basicCopyToolStripMenuItem1.Name = "basicCopyToolStripMenuItem1";
+            this.basicCopyToolStripMenuItem1.Size = new System.Drawing.Size(262, 44);
+            this.basicCopyToolStripMenuItem1.Text = "Basic Copy";
+            this.basicCopyToolStripMenuItem1.Click += new System.EventHandler(this.basicCopyToolStripMenuItem1_Click);
+            // 
+            // greyScaleToolStripMenuItem1
+            // 
+            this.greyScaleToolStripMenuItem1.Name = "greyScaleToolStripMenuItem1";
+            this.greyScaleToolStripMenuItem1.Size = new System.Drawing.Size(262, 44);
+            this.greyScaleToolStripMenuItem1.Text = "Grey Scale";
+            this.greyScaleToolStripMenuItem1.Click += new System.EventHandler(this.greyScaleToolStripMenuItem1_Click);
+            // 
+            // invertToolStripMenuItem1
+            // 
+            this.invertToolStripMenuItem1.Name = "invertToolStripMenuItem1";
+            this.invertToolStripMenuItem1.Size = new System.Drawing.Size(262, 44);
+            this.invertToolStripMenuItem1.Text = "Invert";
+            this.invertToolStripMenuItem1.Click += new System.EventHandler(this.invertToolStripMenuItem1_Click);
+            // 
+            // sepiaToolStripMenuItem1
+            // 
+            this.sepiaToolStripMenuItem1.Name = "sepiaToolStripMenuItem1";
+            this.sepiaToolStripMenuItem1.Size = new System.Drawing.Size(262, 44);
+            this.sepiaToolStripMenuItem1.Text = "Sepia";
+            this.sepiaToolStripMenuItem1.Click += new System.EventHandler(this.sepiaToolStripMenuItem1_Click);
+            // 
+            // subtractToolStripMenuItem1
+            // 
+            this.subtractToolStripMenuItem1.Name = "subtractToolStripMenuItem1";
+            this.subtractToolStripMenuItem1.Size = new System.Drawing.Size(262, 44);
+            this.subtractToolStripMenuItem1.Text = "Subtract";
+            this.subtractToolStripMenuItem1.Click += new System.EventHandler(this.subtractToolStripMenuItem1_Click);
             // 
             // pictureBox3
             // 
@@ -265,20 +301,16 @@
             this.timer1.Interval = 30;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // cITLibFiltersToolStripMenuItem1
+            // saveImageToolStripMenuItem1
             // 
-            this.cITLibFiltersToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.timeWarpToolStripMenuItem});
-            this.cITLibFiltersToolStripMenuItem1.Name = "cITLibFiltersToolStripMenuItem1";
-            this.cITLibFiltersToolStripMenuItem1.Size = new System.Drawing.Size(359, 44);
-            this.cITLibFiltersToolStripMenuItem1.Text = "CIT Lib Filters";
+            this.saveImageToolStripMenuItem1.Name = "saveImageToolStripMenuItem1";
+            this.saveImageToolStripMenuItem1.Size = new System.Drawing.Size(359, 44);
+            this.saveImageToolStripMenuItem1.Text = "Save Image";
+            this.saveImageToolStripMenuItem1.Click += new System.EventHandler(this.saveImageToolStripMenuItem1_Click);
             // 
-            // timeWarpToolStripMenuItem
+            // saveFileDialog2
             // 
-            this.timeWarpToolStripMenuItem.Name = "timeWarpToolStripMenuItem";
-            this.timeWarpToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
-            this.timeWarpToolStripMenuItem.Text = "TimeWarp";
-            this.timeWarpToolStripMenuItem.Click += new System.EventHandler(this.timeWarpToolStripMenuItem_Click);
+            this.saveFileDialog2.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialog2_FileOk);
             // 
             // Form1
             // 
@@ -329,10 +361,14 @@
         private System.Windows.Forms.ToolStripMenuItem onToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem offToolStripMenuItem;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.ToolStripMenuItem basicDIPLibToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem subtToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cITLibFiltersToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem timeWarpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dynamicDIPToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem subtractToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem basicCopyToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem invertToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem greyScaleToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem sepiaToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem saveImageToolStripMenuItem1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog2;
     }
 }
 
