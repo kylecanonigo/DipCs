@@ -121,11 +121,6 @@ namespace DipCs
             mgadevice[0].ShowWindow(pictureBox1);
         }
 
-        private void greyscaleToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            timer1.Enabled = true;
-        }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             IDataObject data;
@@ -134,7 +129,10 @@ namespace DipCs
             data = Clipboard.GetDataObject();
             bmap = (Image)(data.GetData("System.Drawing.Bitmap", true));
             Bitmap b = new Bitmap(bmap); // loaded
-            BitmapFilter.GrayScale(b);
+            //BitmapFilter.GrayScale(b);
+            BitmapFilter.TimeWarp(b, 20, true);
+            // Subtract(ref Bitmap a, ref Bitmap b,ref Bitmap result, int value)
+
             pictureBox2.Image = b;
             /*
             Color pixel;
@@ -156,6 +154,17 @@ namespace DipCs
         private void offToolStripMenuItem_Click(object sender, EventArgs e)
         {
             mgadevice[0].Stop();
+        }
+
+        private void subtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ImageProcess.Subtract(ref imageB, ref imageA, ref resultImage2, 20);
+            pictureBox3.Image = resultImage2;
+        }
+
+        private void timeWarpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            timer1.Enabled = true;
         }
 
         private void histogramToolStripMenuItem_Click(object sender, EventArgs e)

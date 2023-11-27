@@ -46,15 +46,17 @@
             this.loadImageToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.loadBackgroundToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.subtractToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
-            this.openFileDialog3 = new System.Windows.Forms.OpenFileDialog();
+            this.basicDIPLibToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.subtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cameraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.onToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.offToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dynamicDIPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.greyscaleToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
+            this.openFileDialog3 = new System.Windows.Forms.OpenFileDialog();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.cITLibFiltersToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.timeWarpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -97,8 +99,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dIPBASICToolStripMenuItem,
             this.dIPPart2ToolStripMenuItem,
-            this.cameraToolStripMenuItem,
-            this.dynamicDIPToolStripMenuItem});
+            this.cameraToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(2104, 42);
@@ -116,7 +117,7 @@
             this.histogramToolStripMenuItem,
             this.sepiaToolStripMenuItem});
             this.dIPBASICToolStripMenuItem.Name = "dIPBASICToolStripMenuItem";
-            this.dIPBASICToolStripMenuItem.Size = new System.Drawing.Size(149, 36);
+            this.dIPBASICToolStripMenuItem.Size = new System.Drawing.Size(149, 38);
             this.dIPBASICToolStripMenuItem.Text = "DIP PART 1";
             // 
             // loadImageToolStripMenuItem
@@ -173,7 +174,8 @@
             this.dIPPart2ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.loadImageToolStripMenuItem1,
             this.loadBackgroundToolStripMenuItem,
-            this.subtractToolStripMenuItem});
+            this.subtractToolStripMenuItem,
+            this.basicDIPLibToolStripMenuItem});
             this.dIPPart2ToolStripMenuItem.Name = "dIPPart2ToolStripMenuItem";
             this.dIPPart2ToolStripMenuItem.Size = new System.Drawing.Size(149, 36);
             this.dIPPart2ToolStripMenuItem.Text = "DIP PART 2";
@@ -181,23 +183,62 @@
             // loadImageToolStripMenuItem1
             // 
             this.loadImageToolStripMenuItem1.Name = "loadImageToolStripMenuItem1";
-            this.loadImageToolStripMenuItem1.Size = new System.Drawing.Size(332, 44);
+            this.loadImageToolStripMenuItem1.Size = new System.Drawing.Size(359, 44);
             this.loadImageToolStripMenuItem1.Text = "Load Image";
             this.loadImageToolStripMenuItem1.Click += new System.EventHandler(this.loadImageToolStripMenuItem1_Click);
             // 
             // loadBackgroundToolStripMenuItem
             // 
             this.loadBackgroundToolStripMenuItem.Name = "loadBackgroundToolStripMenuItem";
-            this.loadBackgroundToolStripMenuItem.Size = new System.Drawing.Size(332, 44);
+            this.loadBackgroundToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
             this.loadBackgroundToolStripMenuItem.Text = "Load Background";
             this.loadBackgroundToolStripMenuItem.Click += new System.EventHandler(this.loadBackgroundToolStripMenuItem_Click);
             // 
             // subtractToolStripMenuItem
             // 
             this.subtractToolStripMenuItem.Name = "subtractToolStripMenuItem";
-            this.subtractToolStripMenuItem.Size = new System.Drawing.Size(332, 44);
+            this.subtractToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
             this.subtractToolStripMenuItem.Text = "Subtract";
             this.subtractToolStripMenuItem.Click += new System.EventHandler(this.subtractToolStripMenuItem_Click);
+            // 
+            // basicDIPLibToolStripMenuItem
+            // 
+            this.basicDIPLibToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.subtToolStripMenuItem});
+            this.basicDIPLibToolStripMenuItem.Name = "basicDIPLibToolStripMenuItem";
+            this.basicDIPLibToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.basicDIPLibToolStripMenuItem.Text = "Basic DIP Lib";
+            // 
+            // subtToolStripMenuItem
+            // 
+            this.subtToolStripMenuItem.Name = "subtToolStripMenuItem";
+            this.subtToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.subtToolStripMenuItem.Text = "Subtract";
+            this.subtToolStripMenuItem.Click += new System.EventHandler(this.subtToolStripMenuItem_Click);
+            // 
+            // cameraToolStripMenuItem
+            // 
+            this.cameraToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.onToolStripMenuItem,
+            this.offToolStripMenuItem,
+            this.cITLibFiltersToolStripMenuItem1});
+            this.cameraToolStripMenuItem.Name = "cameraToolStripMenuItem";
+            this.cameraToolStripMenuItem.Size = new System.Drawing.Size(115, 38);
+            this.cameraToolStripMenuItem.Text = "Camera";
+            // 
+            // onToolStripMenuItem
+            // 
+            this.onToolStripMenuItem.Name = "onToolStripMenuItem";
+            this.onToolStripMenuItem.Size = new System.Drawing.Size(181, 44);
+            this.onToolStripMenuItem.Text = "On";
+            this.onToolStripMenuItem.Click += new System.EventHandler(this.onToolStripMenuItem_Click);
+            // 
+            // offToolStripMenuItem
+            // 
+            this.offToolStripMenuItem.Name = "offToolStripMenuItem";
+            this.offToolStripMenuItem.Size = new System.Drawing.Size(181, 44);
+            this.offToolStripMenuItem.Text = "Off";
+            this.offToolStripMenuItem.Click += new System.EventHandler(this.offToolStripMenuItem_Click);
             // 
             // pictureBox3
             // 
@@ -219,48 +260,25 @@
             this.openFileDialog3.FileName = "openFileDialog3";
             this.openFileDialog3.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog3_FileOk);
             // 
-            // cameraToolStripMenuItem
-            // 
-            this.cameraToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.onToolStripMenuItem,
-            this.offToolStripMenuItem});
-            this.cameraToolStripMenuItem.Name = "cameraToolStripMenuItem";
-            this.cameraToolStripMenuItem.Size = new System.Drawing.Size(115, 38);
-            this.cameraToolStripMenuItem.Text = "Camera";
-            // 
-            // onToolStripMenuItem
-            // 
-            this.onToolStripMenuItem.Name = "onToolStripMenuItem";
-            this.onToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
-            this.onToolStripMenuItem.Text = "On";
-            this.onToolStripMenuItem.Click += new System.EventHandler(this.onToolStripMenuItem_Click);
-            // 
-            // offToolStripMenuItem
-            // 
-            this.offToolStripMenuItem.Name = "offToolStripMenuItem";
-            this.offToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
-            this.offToolStripMenuItem.Text = "Off";
-            this.offToolStripMenuItem.Click += new System.EventHandler(this.offToolStripMenuItem_Click);
-            // 
-            // dynamicDIPToolStripMenuItem
-            // 
-            this.dynamicDIPToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.greyscaleToolStripMenuItem1});
-            this.dynamicDIPToolStripMenuItem.Name = "dynamicDIPToolStripMenuItem";
-            this.dynamicDIPToolStripMenuItem.Size = new System.Drawing.Size(170, 38);
-            this.dynamicDIPToolStripMenuItem.Text = "Dynamic DIP";
-            // 
-            // greyscaleToolStripMenuItem1
-            // 
-            this.greyscaleToolStripMenuItem1.Name = "greyscaleToolStripMenuItem1";
-            this.greyscaleToolStripMenuItem1.Size = new System.Drawing.Size(359, 44);
-            this.greyscaleToolStripMenuItem1.Text = "Greyscale";
-            this.greyscaleToolStripMenuItem1.Click += new System.EventHandler(this.greyscaleToolStripMenuItem1_Click);
-            // 
             // timer1
             // 
             this.timer1.Interval = 30;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // cITLibFiltersToolStripMenuItem1
+            // 
+            this.cITLibFiltersToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.timeWarpToolStripMenuItem});
+            this.cITLibFiltersToolStripMenuItem1.Name = "cITLibFiltersToolStripMenuItem1";
+            this.cITLibFiltersToolStripMenuItem1.Size = new System.Drawing.Size(359, 44);
+            this.cITLibFiltersToolStripMenuItem1.Text = "CIT Lib Filters";
+            // 
+            // timeWarpToolStripMenuItem
+            // 
+            this.timeWarpToolStripMenuItem.Name = "timeWarpToolStripMenuItem";
+            this.timeWarpToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.timeWarpToolStripMenuItem.Text = "TimeWarp";
+            this.timeWarpToolStripMenuItem.Click += new System.EventHandler(this.timeWarpToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -310,9 +328,11 @@
         private System.Windows.Forms.ToolStripMenuItem cameraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem onToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem offToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dynamicDIPToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem greyscaleToolStripMenuItem1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ToolStripMenuItem basicDIPLibToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem subtToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cITLibFiltersToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem timeWarpToolStripMenuItem;
     }
 }
 
